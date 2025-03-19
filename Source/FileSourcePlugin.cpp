@@ -53,10 +53,6 @@ int FileSourcePlugin::readData (int16* buffer, int nSamples)
     return nSamples;
 }
 
-void FileSourcePlugin::processChannelData (int16* inBuffer, float* outBuffer, int channel, int64 nSamples)
-{
-}
-
 void FileSourcePlugin::processEventData (EventInfo& info, int64 startTimestamp, int64 stopTimestamp)
 {
 }

@@ -41,25 +41,22 @@ public:
     // ------------------------------------------------------------
 
     /** Attempt to open the file, and return true if successful */
-    bool open (File file);
+    bool open (File file) override;
 
     /** Fill the infoArray and eventInfoArray with the relevant information for all recordings*/
-    void fillRecordInfo();
+    void fillRecordInfo() override;
 
     /** Update the recording to be read in */
-    void updateActiveRecord (int index);
+    void updateActiveRecord (int index) override;
 
     /** Seek to a specific sample number within the active recording */
-    void seekTo (int64 sample);
+    void seekTo (int64 sample) override;
 
     /** Read in nSamples of int16 data into a temporary buffer */
-    int readData (int16* buffer, int nSamples);
+    int readData (int16* buffer, int nSamples) override;;
 
-    /** Convert nSamples of data from int16 to float */
-    void processChannelData (int16* inBuffer, float* outBuffer, int channel, int64 nSamples);
-
-    /** Add info about events occurring within a sample range */
-    void processEventData (EventInfo& info, int64 startTimestamp, int64 stopTimestamp);
+    /** Add info about events occurring within a sample number range */
+    void processEventData (EventInfo& info, int64 startSample, int64 stopSample) override;
 };
 
 #endif
