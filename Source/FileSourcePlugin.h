@@ -21,7 +21,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 
-
 #ifndef FILESOURCEPLUGIN_H_DEFINED
 #define FILESOURCEPLUGIN_H_DEFINED
 
@@ -30,38 +29,37 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 class FileSourcePlugin : public FileSource
 {
 public:
-	/** The class constructor, used to initialize any members. */
-	FileSourcePlugin();
+    /** The class constructor, used to initialize any members. */
+    FileSourcePlugin();
 
-	/** The class destructor, used to deallocate memory */
-	~FileSourcePlugin();
+    /** The class destructor, used to deallocate memory */
+    ~FileSourcePlugin();
 
     // ------------------------------------------------------------
-    //                  PURE VIRTUAL METHODS 
+    //                  PURE VIRTUAL METHODS
     //        (must be implemented by all File Sources)
     // ------------------------------------------------------------
 
     /** Attempt to open the file, and return true if successful */
-    bool open(File file);
+    bool open (File file);
 
     /** Fill the infoArray and eventInfoArray with the relevant information for all recordings*/
     void fillRecordInfo();
 
     /** Update the recording to be read in */
-    void updateActiveRecord(int index);
+    void updateActiveRecord (int index);
 
     /** Seek to a specific sample number within the active recording */
-    void seekTo(int64 sample);
+    void seekTo (int64 sample);
 
     /** Read in nSamples of int16 data into a temporary buffer */
-    int readData(int16* buffer, int nSamples);
+    int readData (int16* buffer, int nSamples);
 
     /** Convert nSamples of data from int16 to float */
-    void processChannelData(int16* inBuffer, float* outBuffer, int channel, int64 nSamples);
+    void processChannelData (int16* inBuffer, float* outBuffer, int channel, int64 nSamples);
 
     /** Add info about events occurring within a sample range */
-    void processEventData(EventInfo& info, int64 startTimestamp, int64 stopTimestamp);
-
+    void processEventData (EventInfo& info, int64 startTimestamp, int64 stopTimestamp);
 };
 
 #endif

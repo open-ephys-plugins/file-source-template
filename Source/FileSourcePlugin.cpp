@@ -25,45 +25,38 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 FileSourcePlugin::FileSourcePlugin()
 {
-
 }
 
 FileSourcePlugin::~FileSourcePlugin()
 {
-	
 }
 
-bool FileSourcePlugin::open(File file)
+bool FileSourcePlugin::open (File file)
 {
-	return true;
+    return true;
 }
 
 void FileSourcePlugin::fillRecordInfo()
 {
-
 }
 
-void FileSourcePlugin::updateActiveRecord(int index)
+void FileSourcePlugin::updateActiveRecord (int index)
 {
-
 }
 
-void FileSourcePlugin::seekTo(int64 sample)
+void FileSourcePlugin::seekTo (int64 sample)
 {
-
 }
 
-int FileSourcePlugin::readData(int16* buffer, int nSamples)
+int FileSourcePlugin::readData (int16* buffer, int nSamples)
 {
-	return nSamples;
+    return nSamples;
 }
 
-void FileSourcePlugin::processChannelData(int16* inBuffer, float* outBuffer, int channel, int64 nSamples)
+void FileSourcePlugin::processChannelData (int16* inBuffer, float* outBuffer, int channel, int64 nSamples)
 {
-
 }
 
-void FileSourcePlugin::processEventData(EventInfo& info, int64 startTimestamp, int64 stopTimestamp)
+void FileSourcePlugin::processEventData (EventInfo& info, int64 startTimestamp, int64 stopTimestamp)
 {
-
 }
