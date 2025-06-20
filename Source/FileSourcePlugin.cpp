@@ -48,7 +48,7 @@ void FileSourcePlugin::seekTo (int64 sample)
 {
 }
 
-int FileSourcePlugin::readData (int16* buffer, int nSamples)
+int FileSourcePlugin::readData (float* buffer, int nSamples)
 {
     return nSamples;
 }

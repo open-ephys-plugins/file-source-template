@@ -52,8 +52,8 @@ public:
     /** Seek to a specific sample number within the active recording */
     void seekTo (int64 sample) override;
 
-    /** Read in nSamples of int16 data into a temporary buffer */
-    int readData (int16* buffer, int nSamples) override;;
+    /** Read in nSamples of data */
+    int readData (float* buffer, int nSamples) override;;
 
     /** Add info about events occurring within a sample number range */
     void processEventData (EventInfo& info, int64 startSample, int64 stopSample) override;
